@@ -2318,7 +2318,6 @@ class SwiftFormatOfficial {
 
 		const matches = output.stderr.matchAll(PARSE_REGEX);
 		for (const match of matches) {
-	    process.stdout.write("MATCHY " + match + "\n")
 			const [_line, pathFull, line, _column, _level, message] = match;
 			const path = pathFull.substring(dir.length + 1);
 			const lineNr = parseInt(line, 10);
