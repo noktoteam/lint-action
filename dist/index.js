@@ -2317,7 +2317,7 @@ class SwiftFormatOfficial {
 		const lintResult = initLintResult();
 
 		const matches = output.stderr.matchAll(PARSE_REGEX);
-		info("matches " + matches);
+    process.stdout.write("matches " + matches + os.EOL);
 		for (const match of matches) {
 			const [_line, pathFull, line, _column, _level, message] = match;
 			const path = pathFull.substring(dir.length + 1);
