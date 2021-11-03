@@ -2316,6 +2316,8 @@ class SwiftFormatOfficial {
 	static parseOutput(dir, output) {
 		const lintResult = initLintResult();
 
+    process.stdout.write("LINT" + output.stderr)
+    process.stdout.write("STDERR" + output.stderr)
 		const matches = output.stderr.matchAll(PARSE_REGEX);
 		for (const match of matches) {
 	    process.stdout.write("MATCHY " + match + "\n")
