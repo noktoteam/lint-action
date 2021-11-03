@@ -2299,7 +2299,7 @@ class SwiftFormatOfficial {
 			throw new Error(`${this.name} error: File extensions are not configurable`);
 		}
 
-		const mode = fix ? "format -i" : "lint";
+		const mode = fix ? "format -i" : "lint -s";
 		return run(`${prefix} swift-format ${mode} ${args} --recursive "."`, {
 			dir,
 			ignoreErrors: true,
