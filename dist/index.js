@@ -757,12 +757,7 @@ function getHeadSha() {
  * @returns {boolean} - Boolean indicating whether changes exist
  */
 function hasChanges() {
-	const output = run("git diff-index --name-status --exit-code HEAD --", { ignoreErrors: true });
-	const status = run("git diff --exit-code", { ignoreErrors: true });
-	process.stdout.write("GIT STATUS " + status.stdout + "\n");
-	process.stdout.write("GIT STATUS CODE" + status.status + "\n");
-	process.stdout.write("GIT OUTPUTTT " + output.stdout + "\n");
-	process.stdout.write("GIT OUTPUTTT STATUS" + output.status + "\n");
+	const output = run("git diff --exit-code", { ignoreErrors: true });
 	const hasChangedFiles = output.status === 1;
 	core.info(`${hasChangedFiles ? "Changes" : "No changes"} found with Git`);
 	return hasChangedFiles;
