@@ -2317,6 +2317,7 @@ class SwiftFormatOfficial {
 		const lintResult = initLintResult();
 
 		const matches = output.stderr.matchAll(PARSE_REGEX);
+		info("matches " + matches);
 		for (const match of matches) {
 			const [_line, pathFull, line, _column, _level, message] = match;
 			const path = pathFull.substring(dir.length + 1);
@@ -2866,7 +2867,7 @@ module.exports = require("path");
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __nccwpck_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -2880,7 +2881,7 @@ module.exports = require("path");
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		var threw = true;
 /******/ 		try {
@@ -2889,16 +2890,16 @@ module.exports = require("path");
 /******/ 		} finally {
 /******/ 			if(threw) delete __webpack_module_cache__[moduleId];
 /******/ 		}
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat */
-/******/ 	
+/******/
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
