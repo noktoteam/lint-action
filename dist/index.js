@@ -758,6 +758,8 @@ function getHeadSha() {
  */
 function hasChanges() {
 	const output = run("git diff-index --name-status --exit-code HEAD --", { ignoreErrors: true });
+	process.stdout.write("GIT OUTPUTTT " + output.stdout + "\n");
+	process.stdout.write("GIT OUTPUTTT STATUS" + output.status + "\n");
 	const hasChangedFiles = output.status === 1;
 	core.info(`${hasChangedFiles ? "Changes" : "No changes"} found with Git`);
 	return hasChangedFiles;
